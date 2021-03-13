@@ -1,0 +1,13 @@
+{
+  "RegisterAPI": "http://127.0.0.1:8000/api/register/",
+  "LoginAPI": "http://127.0.0.1:8000/api/login/",
+  "CountAPI": "http://127.0.0.1:8000/api/count/",
+  "WriteBlogAPI": "http://127.0.0.1:8000/api/write/",
+  "LikeBlogAPI": "http://127.0.0.1:8000/api/likeBlog/",
+  "CommentBlogAPI": "http://127.0.0.1:8000/api/commentBlog/",
+  "SendPayRequestAPI": "http://127.0.0.1:8000/api/sendPayRequest/",
+
+
+  "UserHomePageURL": "http://127.0.0.1:3000/user",
+  "LoginPageURL": "http://127.0.0.1:3000/login"
+}
