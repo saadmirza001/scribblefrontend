@@ -63,7 +63,7 @@ const User = () => {
 
 
     const changeState = () => {
-        if (state.page == 'user'){
+        if (state.page === 'user'){
             setState((prevState) => ({...prevState, page:'other'}))
         }else {
             setState((prevState) => ({...prevState, page:'user'}))
@@ -87,13 +87,13 @@ const User = () => {
     }
 
 
-    // const makeDonation = () => {
-    //     alert("Donation Request...")
-    //     fetch(`${Common.SendPayRequestAPI}${currentUser}/`).then(res => res.json()).then(res => {
-    //         window.location.href = res.payUrl
-    //     })
-    //
-    // }
+    const makeDonation = () => {
+        alert("Donation Request...")
+        fetch(`${Common.SendPayRequestAPI}${currentUser}/`).then(res => res.json()).then(res => {
+            window.location.href = res.payUrl
+        })
+
+    }
 
 
     const logout = () => {
@@ -120,26 +120,26 @@ const User = () => {
                 {
                     callPopUp.call?<PopUpModel setModelState = {setModelState} modelState={modelState} blogTitle={callPopUp.currentBlogTitle} blogId={callPopUp.currentBlogId} />:""
                 }
-                <img width="100" height="100" style={{borderRadius:"50%", cursor:"pointer"}} src={profileUrl}/>
+                <img width="100" height="100" style={{borderRadius:"50%", cursor:"pointer"}} src={profileUrl} alt="" />
                 <p className="heading" style={styles.Name}>Hey {Name}!
-                    <img onClick={logout} width="30" src="https://cdn.iconscout.com/icon/free/png-256/open-lock-1779407-1512864.png"/>
+                    <img onClick={logout} width="30" src="https://cdn.iconscout.com/icon/free/png-256/open-lock-1779407-1512864.png" alt=""/>
                 </p>
                 <span style={styles.Email}>{Email}</span><br/>
                 <span style={styles.imgSpan}>
-                    <img style={styles.Icon}  src = "https://cdn.iconscout.com/icon/free/png-256/comment-2551199-2136583.png" />{state.comments}
+                    <img style={styles.Icon}  src = "https://cdn.iconscout.com/icon/free/png-256/comment-2551199-2136583.png" alt="" />{state.comments}
                 </span>
 
                 <span style={styles.imgSpan}>
-                    <img style={styles.Icon} src = "https://i.pinimg.com/originals/c0/d2/16/c0d21611b7e1ef0bf8486900301822a4.png" />{state.likes}
+                    <img style={styles.Icon} src = "https://i.pinimg.com/originals/c0/d2/16/c0d21611b7e1ef0bf8486900301822a4.png" alt="" />{state.likes}
                 </span>
 
                 <span style={styles.imgSpan}>
-                    <img style={styles.Icon}src = "https://static.thenounproject.com/png/154887-200.png" />{state.blogs}
+                    <img style={styles.Icon}src = "https://static.thenounproject.com/png/154887-200.png" alt="" />{state.blogs}
                 </span>
 
                 <div style={styles.blogDiv}>
                     {
-                    state.page == 'user'?
+                    state.page === 'user'?
                         state.all_blogs.map((blog, index) => {
                         return (
                              <div style={{paddingTop:10}}>
@@ -155,13 +155,13 @@ const User = () => {
                                 <p key = {index} style={styles.blogTitle}>{blog.title}
                                 <span style={{fontSize:15, color:'gray'}}>{blog.user_id}{blog.date}</span>
                                     {
-                                        blog.isLiked == true?
-                                            <img onClick={() => LikeBlog(blog.id)} width="15" src={likedIcon}/>
+                                        blog.isLiked === true?
+                                            <img onClick={() => LikeBlog(blog.id)} width="15" src={likedIcon} alt=""/>
                                             :
-                                            <img onClick={() => LikeBlog(blog.id)} width="15" src={normalIcon}/>
+                                            <img onClick={() => LikeBlog(blog.id)} width="15" src={normalIcon} alt=""/>
                                     }
-                                    <img width="15" onClick={() => WriteComment(`${blog.title}`, `${blog.id}`)} src="https://simpleicon.com/wp-content/uploads/pencil.png"/>
-                                    {/*<img width="15" onClick={makeDonation} src="https://i.dlpng.com/static/png/1585238-donate-icon-this-is-an-icon-urging-people-to-donate-its-a-hand-holding-donate-png-1600_1600_preview.png"/>*/}
+                                    <img width="15" onClick={() => WriteComment(`${blog.title}`, `${blog.id}`)} src="https://simpleicon.com/wp-content/uploads/pencil.png" alt=""/>
+                                    <img width="15" onClick={makeDonation} src="https://static.thenounproject.com/png/1195084-200.png" alt=""/>
 
                                 </p>
                                 <p style={{paddingLeft:20, paddingRight:20, marginTop:"-20px", color:'black'}}>{blog.detail}</p>
@@ -178,7 +178,7 @@ const User = () => {
             <div style={{width:"50%"}}>
                 <Link to='/write'><button style={styles.Button}>+</button></Link>
                 <button style={styles.ReadButton} onClick={() => changeState()}>
-                    <img src="https://img.icons8.com/ios/452/reading.png" width="30"/>
+                    <img src="https://img.icons8.com/ios/452/reading.png" width="30" alt=""/>
                 </button>
             </div>
 

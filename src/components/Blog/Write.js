@@ -20,7 +20,7 @@ const Write = () => {
             method: "POST",
             body:formData
         }).then(res => res.json()).then(res => {
-            if (res.Status == "Created"){
+            if (res.Status === "Created"){
                 alert("Done")
                 window.location.href = Common.UserHomePageURL
             }else {
@@ -55,7 +55,7 @@ const Write = () => {
 
             <div style={{width:"50%"}}>
                 <Link to='/user'><button style={styles.Button}>
-                    <img style={styles.img} src="https://image.flaticon.com/icons/png/512/0/340.png"/>
+                    <img style={styles.img} src="https://image.flaticon.com/icons/png/512/0/340.png" alt=""/>
                 </button></Link>
             </div>
 

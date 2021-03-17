@@ -17,7 +17,7 @@ const Login = () => {
                 method:'POST',
                 body:formData
             }).then((res) => res.json()).then((res) => {
-                if(res.Status == 'LoggedIn'){
+                if(res.Status === 'LoggedIn'){
                     localStorage.setItem("token", res.Token)
                     localStorage.setItem("username", res.Username)
                     localStorage.setItem("name", res.Name)

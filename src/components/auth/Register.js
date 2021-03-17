@@ -52,7 +52,7 @@ const Register = () => {
                     <div className="form-group">
                         <label htmlFor="profile">
                         <img id = "imShow" src = "https://www.postplanner.com/hs-fs/hub/513577/file-2886416984-png/blog-files/facebook-profile-pic-vs-cover-photo-sq.png?width=250&height=250&name=facebook-profile-pic-vs-cover-photo-sq.png"
-                             width="100" height="100" style={{borderRadius:"50%", cursor:"pointer"}}/></label><br/>
+                             width="100" height="100" style={{borderRadius:"50%", cursor:"pointer"}} alt=""/></label><br/>
                         <input hidden accept = "Image/*" id = "profile" onChange={onChangeImage} type="file" required className="form-control"/>
                     </div>
 
